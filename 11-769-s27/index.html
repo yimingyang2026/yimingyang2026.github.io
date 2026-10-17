@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>11-769 Generative Machine Learning — Spring 2027</title>
+<style>
+:root { --cmu:#c41230; --ink:#222; --muted:#5e6670; --line:#9aa0a6; --soft:#f7f7f7; --link:#0655c9; }
+* { box-sizing:border-box; }
+body { margin:0; background:#fff; color:var(--ink); font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:1.38; }
+a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+.page { max-width:1080px; margin:0 auto; padding:36px 44px 60px; }
+.course-header { margin-bottom:22px; }
+.header-visual { display:grid; grid-template-columns:1fr 190px; min-height:210px; }
+.brand, .portrait { display:flex; align-items:center; justify-content:center; padding:14px 18px; }
+.brand { border-right:1px solid var(--cmu); }
+.brand { gap:20px; }
+.brand img { width:150px; max-width:100%; height:auto; }
+.lti-id { min-width:120px; padding-left:18px; border-left:1px solid #d6d6d6; line-height:1.05; color:#111; }
+.lti-id .lti-big { font-size:34px; font-weight:800; letter-spacing:-1px; color:#111; }
+.lti-id .lti-name { margin-top:6px; font-size:14px; font-weight:700; line-height:1.15; }
+.lti-id .lti-school { margin-top:5px; font-size:11px; color:var(--muted); line-height:1.2; }
+.portrait img { width:145px; height:178px; object-fit:cover; }
+.course-meta { padding:16px 6px 18px; border-top:1px solid var(--cmu); border-bottom:2px solid var(--cmu); }
+.course-meta h1 { color:var(--cmu); font-size:28px; line-height:1.18; margin:0 0 12px; }
+.course-meta-details { display:flex; gap:36px; flex-wrap:wrap; }
+.course-meta p { margin:4px 0; }
+.section-title { color:var(--cmu); font-size:18px; margin:28px 0 9px; font-weight:700; }
+h2 { font-size:24px; margin:30px 0 12px; color:#202a36; }
+h3 { font-size:18px; margin:20px 0 8px; }
+p { margin:9px 0 13px; }
+ul { margin:7px 0 14px 24px; padding:0; } li { margin:4px 0; }
+.info-table, .grading-table, .schedule-table, .topic-table { width:100%; border-collapse:collapse; margin:8px 0 18px; }
+.info-table td { border-bottom:1px solid #80868b; padding:8px 10px; } .info-table td:first-child { font-weight:700; width:26%; }
+.grading-table th,.grading-table td,.schedule-table th,.schedule-table td,.topic-table th,.topic-table td { border:1px solid #8a8f94; padding:8px 10px; vertical-align:top; text-align:left; }
+.grading-table th,.schedule-table th,.topic-table th { background:#f0f1f2; font-weight:700; }
+.schedule-table td:nth-child(1) { width:10%; white-space:nowrap; } .schedule-table td:nth-child(2) { width:8%; white-space:nowrap; } .schedule-table td:nth-child(3) { width:42%; }
+.schedule-table tr.exemplar td { background:#fffaf0; } .schedule-table tr.student td { background:#fafcff; } .schedule-table tr.no-class td { color:#b00020; font-style:italic; }
+.note { margin:14px 0 18px; padding:10px 14px; border-left:4px solid var(--cmu); background:#fafafa; }
+.links { margin-top:16px; }
+.small { color:var(--muted); font-size:14px; }
+.footer { margin-top:34px; padding-top:12px; border-top:1px solid #ccc; color:var(--muted); font-size:13px; }
+@media (max-width:760px) {
+  .page { padding:18px 16px 40px; }
+  .header-visual { grid-template-columns:1fr; }
+  .brand,.portrait { border-right:0; border-bottom:1px solid var(--cmu); }
+  .brand { flex-wrap:wrap; }
+  .lti-id { border-left:0; padding-left:0; text-align:center; }
+  .course-meta { padding:18px 4px; }
+  .schedule-table { font-size:14px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="course-header">
+<div class="header-visual">
+<div class="brand"><img alt="Carnegie Mellon University" src="images/cmu-logo.png"/><div class="lti-id"><div class="lti-big">LTI</div><div class="lti-name">Language Technologies Institute</div><div class="lti-school">School of Computer Science</div></div></div>
+<div class="portrait"><img alt="Portrait of Yiming Yang" src="images/instructor.jpg"/></div>
+</div>
+<div class="course-meta">
+<h1>11-769 Generative Machine Learning</h1>
+<div class="course-meta-details">
+<p><strong>Semester:</strong> Spring 2027</p>
+<p><strong>Time &amp; Location:</strong> TR 12:30pm - 1:50pm</p>
+</div>
+</div>
+</header>
+<div class="section-title" id="instructor-information">Instructor Information</div>
+<table class="info-table">
+<tr><td>Name</td><td>Yiming Yang</td></tr>
+<tr><td>Contact Info</td><td>yiming at cs dot cmu dot edu</td></tr>
+<tr><td>Office Location</td><td>GHC 5703, 5000 Forbes Avenue, Pittsburgh, PA 15213</td></tr>
+<tr><td>Office Hours</td><td>TBD</td></tr>
+</table>
+<div class="section-title">TA Information</div>
+<table class="info-table">
+<tr><td>TA Name</td><td>TBD</td></tr>
+<tr><td>TA Contact Info</td><td>TBD</td></tr>
+<tr><td>Office Location</td><td>TBD</td></tr>
+<tr><td>Office Hours</td><td>TBD</td></tr>
+</table>
+
+
+<h2>What is this course about?</h2>
+<p>Modern machine learning is no longer dominated by a single generative paradigm.  In addition to autoregressive language models, researchers increasingly use diffusion models, flow matching, energy-based methods, and consistency-style models across many frontier problems.</p>
+<p>This course studies six major modern generative paradigms and systematically compares their strengths and limitations across three broad categories of data: token sequences, including language; continuous signals, such as images; and graph-based structures.</p>
+<h2>Why this course?</h2>
+<p>Large language models are the most visible success of modern generative AI, but they are not the whole story. Cutting-edge ML research increasingly studies generation for images, structured objects, scientific discovery, and hard optimization problems.</p>
+<p>The course is designed for students who want to understand what lies beyond autoregressive LLMs: how different generative paradigms work, where they are being applied, and what current research questions remain open.</p>
+<h2>Who should take this course?</h2>
+<ul>
+<li><strong>NLP and LLM students</strong> interested in diffusion, flow matching, and alternatives to autoregressive models.</li>
+<li><strong>ML students</strong> interested in modern generative modeling across multiple data types and applications.</li>
+<li><strong>CSD students</strong> interested in learning-based approaches to NP-hard problems and graph-structured generation.</li>
+<li><strong>OR/Economics students</strong> interested in machine-learning-based optimization, decision making, and structured generative methods.</li>
+</ul>
+<h2>Prerequisites</h2>
+<p>Students should have prior exposure to introductory machine learning, probability and statistics, and basic optimization. Familiarity with modern large language models is strongly recommended but not required. Prior experience with diffusion models, flow matching, graph generation, combinatorial optimization, or advanced deep learning systems is not assumed.</p>
+<h2>Course organization</h2>
+<h3>Instructor-led lectures</h3>
+<p>The instructor will introduce each core generative paradigm through canonical examples.</p>
+<ul>
+<li>Autoregressive models through language modeling</li>
+<li>Energy-based models through image generation</li>
+<li>Diffusion models through image generation</li>
+<li>Flow matching through image generation</li>
+<li>Consistency / IMM-style models through image generation</li>
+<li>Autoregressive reinforcement learning for combinatorial optimization</li>
+<li>Non-autoregressive reinforcement learning for combinatorial optimization</li>
+<li>Diffusion models for combinatorial optimization</li>
+</ul>
+<h3>Student-led lectures</h3>
+<p>Student teams will present frontier research topics. Each topic takes one lecture, covers at least two generative paradigms, and is based on a curated paper set.</p>
+<table class="topic-table">
+<thead><tr><th>Object Category</th><th>Possible Topics</th></tr></thead>
+<tbody>
+<tr><td>Sequential Tokens</td><td>Coding, mathematical reasoning, diffusion language models</td></tr>
+<tr><td>Continuous Signals</td><td>Fast generation, controllable generation, diffusion vs. flow matching</td></tr>
+<tr><td>Graph Structures</td><td>MIS, MaxCut, SAT, molecules, proteins, other NP-hard problems</td></tr>
+</tbody>
+</table>
+<h2>Course format</h2>
+<ul>
+<li>No traditional homework.</li>
+<li>No midterm or final exams.</li>
+<li>Each lecture includes one to three checkpoint questions, taking approximately 10–15 minutes.</li>
+<li>Students will submit answers to checkpoint questions through Gradescope. AI tools may not be used before submission.</li>
+<li>Each student will give a student-led lecture. Teaming is possible, depending on the number of enrolled students.</li>
+</ul>
+<p class="links">See the following pages for <a href="Course_documents/Student_Led_Lecture_Guidelines.pdf">guidelines</a>, <a href="Course_documents/Student_Led_Lecture_Topics.pdf">topics</a>, <a href="Course_documents/Student_Led_Lecture_Evaluation_Rubric.pdf">evaluation rubrics</a>, the <a href="Course_documents/Generic_Checkpoint_Grading_Rubric.pdf">checkpoint grading rubric</a>, and the <a href="#schedule">course schedule</a>.</p>
+<p class="small"><strong>Lecture slides:</strong> Instructor, invited, and student-led lecture slides are class-member-only materials and will be distributed to enrolled students through the course OneDrive folder <em>Shared_slides</em>. They are not posted on this public website.</p>
+<h2>Grading</h2>
+<table class="grading-table">
+<thead><tr><th>Component</th><th>Weight</th></tr></thead>
+<tbody>
+<tr><td>Instructor-led Lecture Checkpoints</td><td>30%</td></tr>
+<tr><td>Student-led Lecture Checkpoints</td><td>30%</td></tr>
+<tr><td>Student-Led Lectures</td><td>40% (50% by peers, 50% by Instructor/TA)</td></tr>
+</tbody>
+</table>
+<h2 id="schedule">Course Schedule</h2>
+<p>The first part of the semester consists of instructor-led lectures and three invited student-led exemplars. After Spring Break, the remaining lecture slots are reserved for student-led lectures; their topics and presenters will be determined after enrollment and topic selection.</p>
+<div class="note"><strong>Planning note:</strong> The student-led portion is intentionally left open at this stage. The dates are reserved, but topic-to-date assignments will be filled in later.</div>
+<table class="schedule-table">
+<thead><tr><th>Date</th><th>ID</th><th>Lecture</th><th>Planning Focus / Notes</th></tr></thead>
+<tbody>
+<tr class=""><td>1/19</td><td>L1</td><td>Course Introduction</td><td>What do we cover and how do we run the course</td></tr>
+<tr class=""><td>1/21</td><td>L2</td><td>Autoregressive Modeling Foundations</td><td></td></tr>
+<tr class=""><td>1/26</td><td>L3</td><td>Energy-Based Modeling Fundamentals</td><td></td></tr>
+<tr class=""><td>1/28</td><td>L4</td><td>Diffusion Models Fundamentals I</td><td>From Energy Landscapes to Hierarchical Denoising</td></tr>
+<tr class=""><td>2/2</td><td>L5</td><td>Diffusion Models Fundamentals II</td><td>Diffusion as Score-Based Modeling</td></tr>
+<tr class=""><td>2/4</td><td>L6</td><td>Flow Matching Fundamentals</td><td>Learning Arbitrary Distribution Transformations</td></tr>
+<tr class=""><td>2/9</td><td>L7</td><td>Inductive Moment Matching (IMM)</td><td>Learning Consistent Distribution Transformations</td></tr>
+<tr class=""><td>2/11</td><td>L8</td><td>Autoregressive Reinforcement Learning for Neural Combinatorial Optimization (AM)</td><td>Attention Model (AM), Kool et al., ICLR 2019</td></tr>
+<tr class=""><td>2/16</td><td>L9</td><td>Non-Autoregressive Reinforcement Learning for Neural Combinatorial Optimization</td><td>DIMES, Qiu et al., NeurIPS 2022</td></tr>
+<tr class=""><td>2/18</td><td>L10</td><td>Diffusion Models for Combinatorial Optimization</td><td>Supervised DIFUSCO (Sun &amp; Yang, NeurIPS 2023) and Unsupervised DiffUCO (Sanokowski et al., ICML 2024)</td></tr>
+<tr class=""><td>2/23</td><td>L11</td><td>What Makes Diffusion Work for Combinatorial Optimization</td><td>Combinatorial Adjoint Matching (CAM), Feng et al., ICML 2026</td></tr>
+<tr class=""><td>2/25</td><td>Guest Lecture</td><td>Discrete Diffusion for Complex Reasoning, Planning and Beyond</td><td>by Jiacheng Ye, UHK</td></tr>
+<tr class="exemplar"><td>3/2</td><td>SE1</td><td>Mathematical Reasoning &amp; Proof Generation</td><td>Invited student-led lecture exemplar I by Weihua Du</td></tr>
+<tr class="exemplar"><td>3/4</td><td>SE2</td><td>Molecular Graph Generation</td><td>Invited student-led lecture exemplar II by Shanda Li</td></tr>
+<tr class="no-class"><td>3/9</td><td>—</td><td>Spring Break</td><td>No class</td></tr>
+<tr class="no-class"><td>3/11</td><td>—</td><td>Spring Break</td><td>No class</td></tr>
+<tr class="exemplar"><td>3/16</td><td>SE3</td><td>Node Selection from Graphs in Combinatorial Optimization</td><td>Invited student-led lecture exemplar III by Shengyu Feng</td></tr>
+<tr class="student"><td>3/18</td><td>SL2</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>3/23</td><td>SL3</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>3/25</td><td>SL4</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>3/30</td><td>SL5</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>4/1</td><td>SL6</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>4/6</td><td>SL7</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>4/8</td><td>SL8</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>4/13</td><td>SL9</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="no-class"><td>4/15–4/16</td><td>—</td><td>Spring Carnival</td><td>No class</td></tr>
+<tr class="student"><td>4/20</td><td>SL10</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>4/22</td><td>SL11</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>4/27</td><td>SL12</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+<tr class="student"><td>4/29</td><td>SL13</td><td>Student-led lecture</td><td>Topic and presenter(s) to be determined after enrollment and topic selection</td></tr>
+</tbody>
+</table>
+<div class="footer"><a href="../">Yiming Yang</a> &middot; Language Technologies Institute, Carnegie Mellon University</div>
+</div>
+</body>
+</html>
